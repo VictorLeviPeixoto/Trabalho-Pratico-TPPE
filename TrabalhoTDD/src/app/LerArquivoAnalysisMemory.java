@@ -1,19 +1,21 @@
 package app;
 
 import java.io.FileNotFoundException;
+
 import java.io.FileReader;
 import java.util.Scanner;
+import app.ArquivoNaoEncontradoException;
 
 
 public class LerArquivoAnalysisMemory {
-	
-	public static void lerAnalysisMemory() throws ArquivoNaoEncontradoException {
+	private static String nomeArquivo = "analysisMemory.out";
+	public static void lerAnalysisMemory() throws ArquivoNaoEncontradoException{
         Scanner arquivoAnalysisMemory = null;
 		try {
 			arquivoAnalysisMemory = new Scanner(new FileReader("../TrabalhoTDD/analysisMemory.out")).useDelimiter("\\n");
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ArquivoNaoEncontradoException(nomeArquivo);
 		}
         while (arquivoAnalysisMemory.hasNext()) {
             System.out.println( arquivoAnalysisMemory.next() );
@@ -21,4 +23,6 @@ public class LerArquivoAnalysisMemory {
         arquivoAnalysisMemory.close();
     }
 
-}
+
+	}
+	
