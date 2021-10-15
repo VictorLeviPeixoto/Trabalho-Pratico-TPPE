@@ -1,6 +1,10 @@
-package test;
+package app;
 
 public class EscritaArquivo {
+	public EscritaArquivo() {
+		
+	}
+	
 	private char delimitador;
 	
 	public void definirDelimitador(char delimitador) {
