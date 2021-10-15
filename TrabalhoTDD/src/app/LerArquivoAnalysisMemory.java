@@ -9,6 +9,23 @@ import app.ArquivoNaoEncontradoException;
 
 public class LerArquivoAnalysisMemory {
 	private static String nomeArquivo = "analysisMemory.out";
+
+	public void setNomeArquivo(String nomeArquivo) {
+		this.nomeArquivo = nomeArquivo;
+	}
+
+	public String getNomeFalsificacao() {
+		return "testeMemory1";
+	}
+
+	public String getNomeDuplicacao() {
+		return "testeMemory2";
+	}
+
+	public String getNomeArquivo() {
+		return nomeArquivo;
+	}
+
 	public static void lerAnalysisMemory() throws ArquivoNaoEncontradoException{
         Scanner arquivoAnalysisMemory = null;
 		try {
@@ -25,4 +42,3 @@ public class LerArquivoAnalysisMemory {
 
 
 	}
-	
