@@ -1,5 +1,11 @@
 package app;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import exceptions.EscritaNaoPermitidaException;
+
 public class EscritaArquivo {
 	public EscritaArquivo() {
 		
@@ -21,7 +27,19 @@ public class EscritaArquivo {
 		return caminhoSaida;
 	}
 
-	public void setCaminhoSaida(String caminho) {
-		this.caminhoSaida = caminho;
+	public void setCaminhoSaida(String caminho) throws EscritaNaoPermitidaException{
+		try {
+			Path caminhoDoArquivo = Paths.get(caminho);
+			
+			if(!Files.isWritable(caminhoDoArquivo)) {
+				throw new EscritaNaoPermitidaException(caminhoDoArquivo);
+			}
+			this.caminhoSaida = caminho;
+
+		}catch(EscritaNaoPermitidaException e) {
+			System.out.println(e);
+			System.exit(-1);
+		}
 	}
+	
 }
