@@ -1,4 +1,4 @@
-package tests;
+package test;
 
 import static org.junit.Assert.*;
 
@@ -7,7 +7,7 @@ import org.junit.Test;
 import app.LerArquivoAnalysisMemory;
 import app.LerArquivoAnalysisTime;
 
-public class testNomeArquivo {
+public class TestNomeArquivo {
 	private LerArquivoAnalysisMemory nomeAnalysisMemory;
 	private LerArquivoAnalysisTime nomeAnalysisTime;
 
