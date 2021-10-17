@@ -27,13 +27,13 @@ public class FormatoSaidaTest {
 	
 	@Test
 	public void testDefinirFomatoColuna() {
-		escritaArquivo.definirDelimitador(colunas);
+		escritaArquivo.setFormato(colunas);
 		assertEquals(colunas, escritaArquivo.getFormato());
 	}
 	
 	@Test
 	public void testDefinirFomatoErrado() {
-		escritaArquivo.definirDelimitador('wtf');
+		escritaArquivo.setFormato('wtf');
 		assertEquals('wtf', escritaArquivo.getFormato());
 	}
 	
