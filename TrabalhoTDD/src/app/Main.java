@@ -11,7 +11,7 @@ public class Main {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static void main(String[] args) throws ArquivoNaoEncontradoException, EscritaNaoPermitidaException {
+	public static void main(String[] args) throws Exception {
 		Scanner scanner = new Scanner(System.in);
 		LerArquivoAnalysisTime analysisTime = new LerArquivoAnalysisTime();
 		LerArquivoAnalysisMemory analysisMemory = new LerArquivoAnalysisMemory();
@@ -24,7 +24,15 @@ public class Main {
 		System.out.print("Digite o caminho do diretório para salvar o arquivo de saída: ");
 		String caminhoArquivoSaida = scanner.nextLine();
 		escritaArquivo.setCaminhoSaida(caminhoArquivoSaida);
+		
+
+		System.out.print("Escolha o formato de saída: linhas ou colunas");
+		String formatoArquivoSaida = scanner.nextLine();
+		escritaArquivo.setFormato(formatoArquivoSaida);
+		
 		scanner.close();
+		
+		
 
 	}
 

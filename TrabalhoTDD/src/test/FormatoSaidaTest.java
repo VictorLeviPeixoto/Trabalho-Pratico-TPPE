@@ -3,6 +3,7 @@ package test;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 import app.EscritaArquivo;
@@ -20,21 +21,21 @@ public class FormatoSaidaTest {
 	}
 	
 	@Test
-	public void testDefinirFomatoLinha() {
+	public void testDefinirFomatoLinha() throws Exception {
 		escritaArquivo.setFormato(linhas);
 		assertEquals(linhas, escritaArquivo.getFormato());
 	}
 	
 	@Test
-	public void testDefinirFomatoColuna() {
+	public void testDefinirFomatoColuna() throws Exception {
 		escritaArquivo.setFormato(colunas);
 		assertEquals(colunas, escritaArquivo.getFormato());
 	}
 	
-	@Test
-	public void testDefinirFomatoErrado() {
-		escritaArquivo.setFormato('wtf');
-		assertEquals('wtf', escritaArquivo.getFormato());
+	@Test(expected = Exception.class)
+	public void testDefinirFomatoErrado() throws Exception {
+		escritaArquivo.setFormato("wtf");
+
 	}
 	
 }
