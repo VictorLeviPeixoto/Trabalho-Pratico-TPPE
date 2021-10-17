@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import app.EscritaArquivo;
+import exceptions.EscritaNaoPermitidaExceptionn;
 
 public class CaminhoSaida {
 
@@ -23,8 +24,9 @@ public class CaminhoSaida {
 		assertEquals(escritaArquivo.getCaminhoSaida(), caminho );
 	}
 	
-	public void testCaminhoSaidaException() throws EscritaNãoPermitidaException{
-		escritaArquivo.setCaminhoSaida(caminho)
+	@Test
+	public void testCaminhoSaidaException() throws EscritaNaoPermitidaExceptionn{
+		escritaArquivo.setCaminhoSaida(caminho);
 		assertEquals(caminho ,escritaArquivo.getCaminhoSaida());
 		
 	}

@@ -4,7 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
-import app.ArquivoNaoEncontradoException;
+
+import exceptions.ArquivoNaoEncontradoException;
 
 
 public class LerArquivoAnalysisTime {

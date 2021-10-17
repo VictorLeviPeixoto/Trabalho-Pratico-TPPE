@@ -1,5 +1,7 @@
 package app;
 
+import exceptions.ArquivoNaoEncontradoException;
+
 public class Main {
 
 	public Main() {
