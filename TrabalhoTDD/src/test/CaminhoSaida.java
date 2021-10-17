@@ -10,6 +10,7 @@ import app.EscritaArquivo;
 public class CaminhoSaida {
 
 	public EscritaArquivo escritaArquivo;
+	private String caminho = "caminho";
 
 	@Before
 	public void setup() {
@@ -18,9 +19,14 @@ public class CaminhoSaida {
 	
 	@Test
 	public void testDefinirCaminhoSaida() {
-		String caminho = "caminho";
 		escritaArquivo.setCaminhoSaida(caminho);
 		assertEquals(escritaArquivo.getCaminhoSaida(), caminho );
+	}
+	
+	public void testCaminhoSaidaException() throws EscritaNãoPermitidaException{
+		escritaArquivo.setCaminhoSaida(caminho)
+		assertEquals(caminho ,escritaArquivo.getCaminhoSaida());
+		
 	}
 
 }
