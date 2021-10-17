@@ -19,7 +19,8 @@ public class CaminhoSaida {
 	@Test
 	public void testDefinirCaminhoSaida() {
 		String caminho = "caminho";
-		assertEquals("caminho", escritaArquivo.getCaminhoSaida());
+		escritaArquivo.setCaminhoSaida(caminho);
+		assertEquals(escritaArquivo.getCaminhoSaida(), caminho );
 	}
 
 }
