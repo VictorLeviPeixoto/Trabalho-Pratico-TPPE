@@ -16,24 +16,24 @@ public class Main {
 	}
 
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		//LerArquivoAnalysisTime analysisTime = new LerArquivoAnalysisTime();
 		//analysisTime.lerAnalysisTime();
 		//LerArquivoAnalysisMemory analysisMemory = new LerArquivoAnalysisMemory();
 		//analysisMemory.lerAnalysisMemory();
-		NumeroAnalises analysisTime = new NumeroAnalises();
-		analysisTime.getNumeroAnalysisTime();
-		NumeroAnalises analysisMemory = new NumeroAnalises();
-		analysisMemory.getNumeroAnalysisMemory();
+		//NumeroAnalises analysisTime = new NumeroAnalises();
+		//analysisTime.getNumeroAnalysisTime();
+		//NumeroAnalises analysisMemory = new NumeroAnalises();
+		//analysisMemory.getNumeroAnalysisMemory();
 
 	//public static void main(String[] args) throws Exception {
-		//Scanner scanner = new Scanner(System.in);
-		//LerArquivoAnalysisTime analysisTime = new LerArquivoAnalysisTime();
-		//LerArquivoAnalysisMemory analysisMemory = new LerArquivoAnalysisMemory();
-		//EscritaArquivo escritaArquivo = new EscritaArquivo();
+		Scanner scanner = new Scanner(System.in);
+		LerArquivoAnalysisTime analysisTime = new LerArquivoAnalysisTime();
+		LerArquivoAnalysisMemory analysisMemory = new LerArquivoAnalysisMemory();
+		EscritaArquivo escritaArquivo = new EscritaArquivo();
 
-		//analysisTime.lerAnalysisTime();
-		//analysisMemory.lerAnalysisMemory();
+		analysisTime.lerAnalysisTime();
+		analysisMemory.lerAnalysisMemory();
 		
 
 		System.out.print("Digite o caminho do diretório para salvar o arquivo de saída: ");
