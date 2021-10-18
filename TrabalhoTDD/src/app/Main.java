@@ -21,10 +21,7 @@ public class Main {
 		//analysisTime.lerAnalysisTime();
 		//LerArquivoAnalysisMemory analysisMemory = new LerArquivoAnalysisMemory();
 		//analysisMemory.lerAnalysisMemory();
-		//NumeroAnalises analysisTime = new NumeroAnalises();
-		//analysisTime.getNumeroAnalysisTime();
-		//NumeroAnalises analysisMemory = new NumeroAnalises();
-		//analysisMemory.getNumeroAnalysisMemory();
+	
 
 	//public static void main(String[] args) throws Exception {
 		Scanner scanner = new Scanner(System.in);
@@ -47,7 +44,10 @@ public class Main {
 		
 		scanner.close();
 		
-		
+		NumeroAnalises numeroAnalysisTime = new NumeroAnalises();
+		numeroAnalysisTime.getNumeroAnalysisTime();
+		NumeroAnalises numeroAnalysisMemory = new NumeroAnalises();
+		numeroAnalysisMemory.getNumeroAnalysisMemory();
 
 
 	}
