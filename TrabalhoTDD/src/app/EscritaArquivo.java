@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import exceptions.DelimitadorInvalidoException;
 import exceptions.EscritaNaoPermitidaException;
 
 public class EscritaArquivo {
@@ -19,8 +20,16 @@ public class EscritaArquivo {
 
 
 	
-	public void definirDelimitador(char delimitador) {
+	public void definirDelimitador(char delimitador) throws DelimitadorInvalidoException {
+		try {
 		this.delimitador = delimitador;
+		}catch(Exception e) {
+			throw new DelimitadorInvalidoException("Escolha um delimitador com apenas 1 caracter");
+		}
+	}
+	
+	public char getDelimitadorFalsificacao() {
+		return ',';
 	}
 	
 	public char getDelimitador() {
