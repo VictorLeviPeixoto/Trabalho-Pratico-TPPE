@@ -38,8 +38,9 @@ public class LerArquivoAnalysisMemory {
         while (arquivoAnalysisMemory.hasNext()) {
         	String linha = arquivoAnalysisMemory.next();
         	arrayLinhas.add(linha);
-            System.out.println(linha);
+            //System.out.println(linha);
         }
+		//System.out.println(arrayLinhas);
         return arrayLinhas.toArray(new String[arrayLinhas.size()]);
         
         
