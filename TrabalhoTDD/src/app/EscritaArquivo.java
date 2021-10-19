@@ -4,26 +4,32 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import exceptions.DelimitadorInvalidoException;
 import exceptions.EscritaNaoPermitidaException;
 
 public class EscritaArquivo {
-	public EscritaArquivo() {
-		this.caminhoSaida = "";
-		this.formatoSaida = "";
-		
-	}
+
 	
-	private char delimitador;
+	private String delimitador;
 	private String caminhoSaida;
 	private String formatoSaida;
 
 
 	
-	public void definirDelimitador(char delimitador) {
-		this.delimitador = delimitador;
+	public void definirDelimitador(String delimitador) throws DelimitadorInvalidoException {
+		if(delimitador.length() > 1) {
+			throw new DelimitadorInvalidoException("Escolha um delimitador com apenas 1 caracter");
+		}else {
+			this.delimitador=delimitador;
+		}
+		
 	}
 	
-	public char getDelimitador() {
+	public char getDelimitadorFalsificacao() {
+		return ',';
+	}
+	
+	public String getDelimitador() {
 		return delimitador;
 	}
 
@@ -48,16 +54,17 @@ public class EscritaArquivo {
 
 	public void setFormato(String formatoArquivoSaida) throws Exception {
 		try {
-			if (formatoArquivoSaida != "linhas" && formatoArquivoSaida != "colunas" ) {
-				throw new Exception("Formato incorreto. Digite linhas ou colunas");
+			System.out.println(formatoArquivoSaida);
+
+			if (formatoArquivoSaida.equals("linhas") || formatoArquivoSaida.equals("colunas") ) {
+				this.formatoSaida = formatoArquivoSaida;
 			}
 			else {
-				this.formatoSaida = formatoArquivoSaida;
+				throw new Exception();
 			}
 		}
 		catch(Exception e) {
-			System.out.println(e);
-			System.exit(-1);
+			throw new Exception("Formato incorreto. Digite linhas ou colunas");
 		}
 	}
 	
