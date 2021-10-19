@@ -41,8 +41,9 @@ public class LerArquivoAnalysisTime {
 		while (arquivoAnalysisTime.hasNext()) {
         	String linha = arquivoAnalysisTime.next();
         	arrayLinhas.add(linha);
-            System.out.println(arrayLinhas);
+            
         }
+		//System.out.println(arrayLinhas);
         return arrayLinhas.toArray(new String[arrayLinhas.size()]);
 }
 

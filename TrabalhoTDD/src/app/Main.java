@@ -38,8 +38,7 @@ public class Main {
 		System.out.print("Escolha o formato de saída linhas ou colunas: ");
 		String formatoArquivoSaida = scanner.nextLine();
 		escritaArquivo.setFormato(formatoArquivoSaida);
-		
-		
+				
 		numeroAnalysisTime.getNumeroAnalysisTime();
 		numeroAanalysisMemory.getNumeroAnalysisMemory();
 

@@ -22,7 +22,6 @@ public class EscritaArquivo {
 		}else {
 			this.delimitador=delimitador;
 		}
-		
 	}
 	
 	public char getDelimitadorFalsificacao() {
