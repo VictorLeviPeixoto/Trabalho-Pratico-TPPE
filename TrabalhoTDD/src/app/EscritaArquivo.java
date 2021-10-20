@@ -71,5 +71,13 @@ public class EscritaArquivo {
 	public Object getFormato() {
 		return formatoSaida;
 	}
+
+	public void escreverArquivoRespostaAnalysisMemory(){
+
+	}
 	
+
+	public void escreverArquivoRespostaAnalysisTime(){
+
+	}
 }
