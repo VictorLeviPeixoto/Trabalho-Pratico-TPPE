@@ -24,13 +24,13 @@ public class EscritaArquivoTest {
 	
 	@Test
 	public void testDefinirDelimitador() throws DelimitadorInvalidoException {
-		escritaArquivo.definirDelimitador(';');
-		assertEquals(';', escritaArquivo.getDelimitador());
+		escritaArquivo.definirDelimitador(";");
+		assertEquals(";", escritaArquivo.getDelimitador());
 	}
 	
 	@Test
 	public void testDefinirDelimitadorBackSlash() throws DelimitadorInvalidoException {
-		escritaArquivo.definirDelimitador('\n');
-		assertEquals('\n', escritaArquivo.getDelimitador());
+		escritaArquivo.definirDelimitador("\n");
+		assertEquals("\n", escritaArquivo.getDelimitador());
 	}
 }
