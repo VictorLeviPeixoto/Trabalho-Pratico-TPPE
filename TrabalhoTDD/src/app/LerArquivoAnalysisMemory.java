@@ -28,7 +28,7 @@ public class LerArquivoAnalysisMemory {
 		return nomeArquivo;
 	}
 
-	public static String[] lerAnalysisMemory() throws ArquivoNaoEncontradoException{
+	public String[] lerAnalysisMemory() throws ArquivoNaoEncontradoException{
         Scanner arquivoAnalysisMemory = null;
         ArrayList<String> arrayLinhas = new ArrayList<String>();
 		try {

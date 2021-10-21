@@ -9,24 +9,29 @@ import java.util.List;
 public class NumeroAnalises {
 
 	// matriz dinâmica 
-
-	private static List<List<String>> dynamic2D = new ArrayList<List<String>>();
-
+	private static List<List<String>> dynamic2DAnalisisTime = new ArrayList<List<String>>();
+	private static List<List<String>> dynamic2DAnalisisMemory = new ArrayList<List<String>>();
 	
-	public static void getNumeroAnalysisTime() throws IOException {
-			dynamic2D.add(new ArrayList<String>());
+	public List<List<String>> getDynamic2DAnalisisTime() {
+		return dynamic2DAnalisisTime;
+	}
+	
+	public List<List<String>> getDynamic2DAnalisisMemory() {
+		return dynamic2DAnalisisMemory;
+	}
+	
+	public void getNumeroAnalysisTime() throws IOException {
 
 			BufferedReader analysisTime = new BufferedReader(new FileReader("../TrabalhoTDD/analysisTime.out"));
 			
 			int i = 0, j = 0, k = 0;
-			
 			System.out.println("Arquivo analysisTime.out: ");
 			
 			while(analysisTime.ready()){
 				String linha = analysisTime.readLine();
 				if((linha.contains("-"))){
-					dynamic2D.add(new ArrayList<String>());
-
+					dynamic2DAnalisisTime.add(new ArrayList<String>());
+					dynamic2DAnalisisTime.get(i).add(Integer.toString(i));
 					while(k<i) {
 						//mostra o número de analises em cada evolução
 						System.out.println("Foram feitas " + (j-1) + " análises na evolução " + (i));
@@ -35,7 +40,7 @@ public class NumeroAnalises {
 					i++;
 					j=0;
 				}else {
-					dynamic2D.get(i).add(linha);
+					dynamic2DAnalisisTime.get(i-1).add(linha);
 				}
 				j++;
 			}
@@ -44,8 +49,7 @@ public class NumeroAnalises {
 			analysisTime.close();
 		
 	}
-	public static void getNumeroAnalysisMemory() throws IOException {
-		dynamic2D.add(new ArrayList<String>());
+	public  void getNumeroAnalysisMemory() throws IOException {
 
 		BufferedReader analysisMemory = new BufferedReader(new FileReader("../TrabalhoTDD/analysisMemory.out"));
 		int i = 0, j = 0, k = 0;
@@ -53,7 +57,8 @@ public class NumeroAnalises {
 		while(analysisMemory.ready()){
 			String linha = analysisMemory.readLine();
 			if((linha.contains("-"))){
-				dynamic2D.add(new ArrayList<String>());
+				dynamic2DAnalisisMemory.add(new ArrayList<String>());
+				dynamic2DAnalisisMemory.get(i).add(Integer.toString(i));
 				while(k<i) {
 					//mostra o número de analises em cada evolução
 					System.out.println("Foram feitas " + (j-1) + " análises na evolução " + (i));
@@ -62,13 +67,12 @@ public class NumeroAnalises {
 				i++;
 				j=0;
 			}else {
-				dynamic2D.get(i).add(linha);
+				dynamic2DAnalisisMemory.get(i-1).add(linha);
 			}
 			j++;
+
 		}
-		
 		System.out.println("Foram realizadas "+ i + " evoluções no arquivo analysisMemory.out");
 		analysisMemory.close();
-	
 	}
 }

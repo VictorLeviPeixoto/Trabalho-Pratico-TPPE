@@ -21,9 +21,11 @@ public class Main {
 		LerArquivoAnalysisTime analysisTime = new LerArquivoAnalysisTime();
 		LerArquivoAnalysisMemory analysisMemory = new LerArquivoAnalysisMemory();
 		EscritaArquivo escritaArquivo = new EscritaArquivo();
-		NumeroAnalises numeroAnalysisTime = new NumeroAnalises();
-		NumeroAnalises numeroAanalysisMemory = new NumeroAnalises();
+		NumeroAnalises numeroAnalysis = new NumeroAnalises();
 
+		
+		analysisTime.lerAnalysisTime();
+		analysisMemory.lerAnalysisMemory();
 
 
 		System.out.print("Digite o delimitador que deseja usar no arquivo de saída: ");
@@ -39,8 +41,19 @@ public class Main {
 		String formatoArquivoSaida = scanner.nextLine();
 		escritaArquivo.setFormato(formatoArquivoSaida);
 				
-		numeroAnalysisTime.getNumeroAnalysisTime();
-		numeroAanalysisMemory.getNumeroAnalysisMemory();
+		numeroAnalysis.getNumeroAnalysisTime();
+		numeroAnalysis.getNumeroAnalysisMemory();
+		
+		switch (formatoArquivoSaida) {
+			case "linhas":
+				escritaArquivo.escreverAnalysisTimeLinha(numeroAnalysis.getDynamic2DAnalisisTime());
+				escritaArquivo.escreverAnalysisMemoryLinha(numeroAnalysis.getDynamic2DAnalisisMemory());
+				break;
+			case "colunas":
+				escritaArquivo.escreverAnalysisTimeColuna(numeroAnalysis.getDynamic2DAnalisisTime());
+				escritaArquivo.escreverAnalysisMemoryColuna(numeroAnalysis.getDynamic2DAnalisisMemory());
+				break;
+		}	
 
 
 		scanner.close();
