@@ -11,7 +11,9 @@ public class NumeroAnalises {
 	// matriz dinâmica 
 	private static List<List<String>> dynamic2DAnalisisTime = new ArrayList<List<String>>();
 	private static List<List<String>> dynamic2DAnalisisMemory = new ArrayList<List<String>>();
-	
+	private int numMaxAnalisisTime = 0;
+	private int numMaxAnalisisMemory = 0;
+
 	public List<List<String>> getDynamic2DAnalisisTime() {
 		return dynamic2DAnalisisTime;
 	}
@@ -35,6 +37,10 @@ public class NumeroAnalises {
 					while(k<i) {
 						//mostra o número de analises em cada evolução
 						System.out.println("Foram feitas " + (j-1) + " análises na evolução " + (i));
+						if((j)>numMaxAnalisisTime) {
+							numMaxAnalisisTime=(j);
+						}
+
 						k++;
 						}
 					i++;
@@ -62,6 +68,9 @@ public class NumeroAnalises {
 				while(k<i) {
 					//mostra o número de analises em cada evolução
 					System.out.println("Foram feitas " + (j-1) + " análises na evolução " + (i));
+					if((j)>numMaxAnalisisMemory) {
+						numMaxAnalisisMemory=(j);
+					}
 					k++;
 				}
 				i++;
@@ -74,5 +83,13 @@ public class NumeroAnalises {
 		}
 		System.out.println("Foram realizadas "+ i + " evoluções no arquivo analysisMemory.out");
 		analysisMemory.close();
+	}
+
+	public int getNumMaxAnalisisTime() {
+		return numMaxAnalisisTime;
+	}
+
+	public int getNumMaxAnalisisMemory() {
+		return numMaxAnalisisMemory;
 	}
 }

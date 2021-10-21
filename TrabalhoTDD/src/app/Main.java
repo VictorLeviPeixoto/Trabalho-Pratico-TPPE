@@ -50,8 +50,8 @@ public class Main {
 				escritaArquivo.escreverAnalysisMemoryLinha(numeroAnalysis.getDynamic2DAnalisisMemory());
 				break;
 			case "colunas":
-				escritaArquivo.escreverAnalysisTimeColuna(numeroAnalysis.getDynamic2DAnalisisTime());
-				escritaArquivo.escreverAnalysisMemoryColuna(numeroAnalysis.getDynamic2DAnalisisMemory());
+				escritaArquivo.escreverAnalysisTimeColuna(numeroAnalysis.getDynamic2DAnalisisTime(), numeroAnalysis.getNumMaxAnalisisTime());
+				escritaArquivo.escreverAnalysisMemoryColuna(numeroAnalysis.getDynamic2DAnalisisMemory(), numeroAnalysis.getNumMaxAnalisisMemory());
 				break;
 		}	
 
