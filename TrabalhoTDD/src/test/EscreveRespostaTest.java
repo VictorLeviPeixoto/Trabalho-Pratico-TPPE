@@ -32,7 +32,6 @@ public class EscreveRespostaTest {
 	@Test
 	public void testEscreverLinhasArquivoRespostaAnalysisMemory() throws Exception {
         long linhas = 0;
-		escritaArquivo.setFormato("linhas");
         escritaArquivo.definirDelimitador(";");
         escritaArquivo.setCaminhoSaida("outFiles");
         escritaArquivo.escreverAnalysisMemoryLinha(mock);
@@ -44,19 +43,17 @@ public class EscreveRespostaTest {
 	@Test
 	public void testEscreverColunasArquivoRespostaAnalysisMemory() throws Exception {
 		long linhas = 0;
-		escritaArquivo.setFormato("colunas");
         escritaArquivo.definirDelimitador(";");
         escritaArquivo.setCaminhoSaida("outFiles");
-        escritaArquivo.escreverAnalysisMemoryColuna(mock);
+        escritaArquivo.escreverAnalysisMemoryColuna(mock, 3);
         BufferedReader analysisTime = new BufferedReader(new FileReader("../TrabalhoTDD/outFiles/analysisMemoryTab.out"));
         while (analysisTime.readLine() != null) linhas++;
-    	assertEquals(4, linhas);
+    	assertEquals(3, linhas);
 	}
 	
 	@Test
 	public void testEscreverLinhasArquivoRespostaAnalysisTime() throws Exception {
         long linhas = 0;
-		escritaArquivo.setFormato("linhas");
         escritaArquivo.definirDelimitador(";");
         escritaArquivo.setCaminhoSaida("outFiles");
         escritaArquivo.escreverAnalysisTimeLinha(mock);
@@ -68,12 +65,11 @@ public class EscreveRespostaTest {
 	@Test
 	public void testEscreverColunasArquivoRespostaAnalysisTime() throws Exception {
 		long linhas = 0;
-		escritaArquivo.setFormato("colunas");
         escritaArquivo.definirDelimitador(";");
         escritaArquivo.setCaminhoSaida("outFiles");
-        escritaArquivo.escreverAnalysisTimeColuna(mock);
+        escritaArquivo.escreverAnalysisTimeColuna(mock, 3);
         BufferedReader analysisTime = new BufferedReader(new FileReader("../TrabalhoTDD/outFiles/analysisTimeTab.out"));
         while (analysisTime.readLine() != null) linhas++;
-    	assertEquals(4, linhas);
+    	assertEquals(3, linhas);
 	}
 }

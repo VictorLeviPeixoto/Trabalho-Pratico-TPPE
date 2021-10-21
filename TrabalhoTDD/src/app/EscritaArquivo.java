@@ -97,9 +97,9 @@ public class EscritaArquivo {
     	analysisTimeTab.close();		
 	}
 	
-	public void escreverAnalysisTimeColuna(List<List<String>> arrayLinhas) throws IOException {
+	public void escreverAnalysisTimeColuna(List<List<String>> arrayLinhas, int k) throws IOException {
         FileWriter analysisTimeTab = new FileWriter("../TrabalhoTDD/"+this.caminhoSaida+"/analysisTimeTab.out");
-        for(int i = 0; i< arrayLinhas.get(i).size();i++) {
+        for(int i = 0; i< k;i++) {
         	for(int j = 0; j< arrayLinhas.size(); j++) {
         			if(j == ( arrayLinhas.size()-1)){
                        	analysisTimeTab.write(arrayLinhas.get(j).get(i));
@@ -127,9 +127,9 @@ public class EscritaArquivo {
         analysisMemoryTab.close();		
 	}
 	
-	public void escreverAnalysisMemoryColuna(List<List<String>> arrayLinhas) throws IOException {
+	public void escreverAnalysisMemoryColuna(List<List<String>> arrayLinhas, int k) throws IOException {
         FileWriter analysisMemoryTab = new FileWriter("../TrabalhoTDD/"+this.caminhoSaida+"/analysisMemoryTab.out");
-        for(int i = 0; i< arrayLinhas.get(i).size();i++) {
+        for(int i = 0; i< k;i++) {
         	for(int j = 0; j< arrayLinhas.size(); j++) {
         			if(j == ( arrayLinhas.size()-1)){
         				analysisMemoryTab.write(arrayLinhas.get(j).get(i));
