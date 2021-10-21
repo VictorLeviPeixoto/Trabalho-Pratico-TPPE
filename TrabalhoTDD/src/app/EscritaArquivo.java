@@ -1,9 +1,17 @@
 package app;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
+import exceptions.ArquivoNaoEncontradoException;
 import exceptions.DelimitadorInvalidoException;
 import exceptions.EscritaNaoPermitidaException;
 
@@ -72,12 +80,66 @@ public class EscritaArquivo {
 		return formatoSaida;
 	}
 
-	public void escreverArquivoRespostaAnalysisMemory(){
 
+	
+	public void escreverAnalysisTimeLinha(List<List<String>> arrayLinhas) throws IOException {
+        FileWriter analysisTimeTab = new FileWriter("../TrabalhoTDD/"+this.caminhoSaida+"/analysisTimeTab.out");
+        for(int i = 0; i< arrayLinhas.size();i++) {
+        	for(int j = 0; j< arrayLinhas.get(i).size(); j++) {
+        		if(j == ( arrayLinhas.get(i).size()-1)){
+                	analysisTimeTab.write(arrayLinhas.get(i).get(j));
+        		}else {
+                	analysisTimeTab.write(arrayLinhas.get(i).get(j) + this.delimitador);
+        		}
+        	}
+        	analysisTimeTab.write("\n");
+        }
+    	analysisTimeTab.close();		
 	}
 	
-
-	public void escreverArquivoRespostaAnalysisTime(){
-
+	public void escreverAnalysisTimeColuna(List<List<String>> arrayLinhas) throws IOException {
+        FileWriter analysisTimeTab = new FileWriter("../TrabalhoTDD/"+this.caminhoSaida+"/analysisTimeTab.out");
+        for(int i = 0; i< arrayLinhas.get(i).size();i++) {
+        	for(int j = 0; j< arrayLinhas.size(); j++) {
+        			if(j == ( arrayLinhas.size()-1)){
+                       	analysisTimeTab.write(arrayLinhas.get(j).get(i));
+            		}else {
+                       	analysisTimeTab.write(arrayLinhas.get(j).get(i) + this.delimitador);
+            		}
+        	}
+        	analysisTimeTab.write("\n");
+        }
+        analysisTimeTab.close();		
 	}
+	
+	public void escreverAnalysisMemoryLinha(List<List<String>> arrayLinhas) throws IOException {
+        FileWriter analysisMemoryTab = new FileWriter("../TrabalhoTDD/"+this.caminhoSaida+"/analysisMemoryTab.out");
+        for(int i = 0; i< arrayLinhas.size();i++) {
+        	for(int j = 0; j< arrayLinhas.get(i).size(); j++) {
+        		if(j == ( arrayLinhas.get(i).size()-1)){
+        			analysisMemoryTab.write(arrayLinhas.get(i).get(j));
+        		}else {
+        			analysisMemoryTab.write(arrayLinhas.get(i).get(j) + this.delimitador);
+        		}
+        	}
+        	analysisMemoryTab.write("\n");
+        }
+        analysisMemoryTab.close();		
+	}
+	
+	public void escreverAnalysisMemoryColuna(List<List<String>> arrayLinhas) throws IOException {
+        FileWriter analysisMemoryTab = new FileWriter("../TrabalhoTDD/"+this.caminhoSaida+"/analysisMemoryTab.out");
+        for(int i = 0; i< arrayLinhas.get(i).size();i++) {
+        	for(int j = 0; j< arrayLinhas.size(); j++) {
+        			if(j == ( arrayLinhas.size()-1)){
+        				analysisMemoryTab.write(arrayLinhas.get(j).get(i));
+            		}else {
+            			analysisMemoryTab.write(arrayLinhas.get(j).get(i) + this.delimitador);
+            		}
+        	}
+        	analysisMemoryTab.write("\n");
+        }
+        analysisMemoryTab.close();
+	}
+	
 }

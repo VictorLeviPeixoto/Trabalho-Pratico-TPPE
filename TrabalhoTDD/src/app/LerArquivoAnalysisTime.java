@@ -28,7 +28,7 @@ public class LerArquivoAnalysisTime {
 	}
 
 
-	public static String[] lerAnalysisTime() throws ArquivoNaoEncontradoException {
+	public String[] lerAnalysisTime() throws ArquivoNaoEncontradoException {
 		Scanner arquivoAnalysisTime = null;
         ArrayList<String> arrayLinhas = new ArrayList<String>();
 
