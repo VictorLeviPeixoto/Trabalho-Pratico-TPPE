@@ -32,6 +32,16 @@ public class LerArquivoAnalysisTime {
 		Scanner arquivoAnalysisTime = null;
         ArrayList<String> arrayLinhas = new ArrayList<String>();
 
+		return extractedLerAnalysisTime(arquivoAnalysisTime, arrayLinhas);
+}
+
+	/**
+	 * @param arquivoAnalysisTime
+	 * @param arrayLinhas
+	 * @return
+	 * @throws ArquivoNaoEncontradoException
+	 */
+	public String[] extractedLerAnalysisTime(Scanner arquivoAnalysisTime, ArrayList<String> arrayLinhas) throws ArquivoNaoEncontradoException {
 		try {
 			arquivoAnalysisTime = new Scanner(new FileReader("../TrabalhoTDD/analysisTime.out")).useDelimiter("\\n");
 		} catch (FileNotFoundException e) {
@@ -45,7 +55,7 @@ public class LerArquivoAnalysisTime {
         }
 		//System.out.println(arrayLinhas);
         return arrayLinhas.toArray(new String[arrayLinhas.size()]);
-}
+	}
 
 
 	}

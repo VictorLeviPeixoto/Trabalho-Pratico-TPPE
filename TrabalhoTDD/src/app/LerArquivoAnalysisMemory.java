@@ -31,6 +31,19 @@ public class LerArquivoAnalysisMemory {
 	public String[] lerAnalysisMemory() throws ArquivoNaoEncontradoException{
         Scanner arquivoAnalysisMemory = null;
         ArrayList<String> arrayLinhas = new ArrayList<String>();
+		return extractedLerAnalysisMemory(arquivoAnalysisMemory, arrayLinhas);
+        
+        
+    }
+
+	/**
+	 * @param arquivoAnalysisMemory
+	 * @param arrayLinhas
+	 * @return
+	 * @throws ArquivoNaoEncontradoException
+	 */
+	public String[] extractedLerAnalysisMemory(Scanner arquivoAnalysisMemory, ArrayList<String> arrayLinhas)
+			throws ArquivoNaoEncontradoException {
 		try {
 			arquivoAnalysisMemory = new Scanner(new FileReader("../TrabalhoTDD/analysisMemory.out")).useDelimiter("\\n");
 		} catch (Exception e) {
@@ -43,9 +56,7 @@ public class LerArquivoAnalysisMemory {
         }
 		//System.out.println(arrayLinhas);
         return arrayLinhas.toArray(new String[arrayLinhas.size()]);
-        
-        
-    }
+	}
 
 
 	}
