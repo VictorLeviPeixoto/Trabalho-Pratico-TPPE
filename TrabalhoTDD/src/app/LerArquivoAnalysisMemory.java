@@ -1,16 +1,10 @@
 package app;
 
-import java.io.FileNotFoundException;
-
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 import exceptions.ArquivoNaoEncontradoException;
 
 
-public class LerArquivoAnalysisMemory {
-	private static String nomeArquivo = "analysisMemory.out";
+public class LerArquivoAnalysisMemory extends Persistencia{
+	private String nomeArquivo = "analysisMemory.out";
 
 	public void setNomeArquivo(String nomeArquivo) {
 		this.nomeArquivo = nomeArquivo;
@@ -28,24 +22,8 @@ public class LerArquivoAnalysisMemory {
 		return nomeArquivo;
 	}
 
-	public String[] lerAnalysisMemory() throws ArquivoNaoEncontradoException{
-        Scanner arquivoAnalysisMemory = null;
-        ArrayList<String> arrayLinhas = new ArrayList<String>();
-		try {
-			arquivoAnalysisMemory = new Scanner(new FileReader("../TrabalhoTDD/analysisMemory.out")).useDelimiter("\\n");
-		} catch (Exception e) {
-			throw new ArquivoNaoEncontradoException(nomeArquivo);
-		}
-        while (arquivoAnalysisMemory.hasNext()) {
-        	String linha = arquivoAnalysisMemory.next();
-        	arrayLinhas.add(linha);
-            //System.out.println(linha);
-        }
-		//System.out.println(arrayLinhas);
-        return arrayLinhas.toArray(new String[arrayLinhas.size()]);
-        
-        
-    }
-
-
+	public String[] lerAnalysisTime() throws ArquivoNaoEncontradoException {
+		return(lerAnalysis(this.nomeArquivo));
 	}
+
+}
