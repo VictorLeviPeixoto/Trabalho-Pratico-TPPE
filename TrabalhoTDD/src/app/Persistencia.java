@@ -31,7 +31,33 @@ public class Persistencia {
         return arrayLinhas.toArray(new String[arrayLinhas.size()]);
 	}
 	
-	public void escreverAnalysisColuna(int tamanhoLinhas, FileWriter analysisMemoryTab, List<List<String>> arrayLinhas, String delimitador) throws IOException {
+	public void EscritaNoArquivoPorLinha(List<List<String>> arrayLinhas, FileWriter analysisMemoryTab, String delimitador) throws IOException {
+		new EscritaNoArquivoPorLinha(this, arrayLinhas, analysisMemoryTab, delimitador).escrever();
+	}
+	
+	public void EscritaNoArquivoPorColuna(int tamanhoLinhas, FileWriter analysisMemoryTab, List<List<String>> arrayLinhas, String delimitador) throws IOException {
+		new EscritaNoArquivoPorColuna(this, tamanhoLinhas, analysisMemoryTab, arrayLinhas, delimitador).escrever();;
+	}
+		
+}
+
+class EscritaNoArquivoPorColuna {
+	
+	private Persistencia persistencia;
+	private List<List<String>> arrayLinhas;
+	private int tamanhoLinhas;
+	private FileWriter analysisMemoryTab;
+	private String delimitador;
+
+	public EscritaNoArquivoPorColuna(Persistencia persistencia2, int tamanhoLinhas2, FileWriter analysisMemoryTab2, List<List<String>> arrayLinhas2, String delimitador2) {
+		persistencia = persistencia2;
+		arrayLinhas = arrayLinhas2;
+		tamanhoLinhas = tamanhoLinhas2;
+		analysisMemoryTab = analysisMemoryTab2;
+		delimitador = delimitador2;
+	}
+	
+	public void escrever() throws IOException {
 		for(int i = 0; i < tamanhoLinhas; i++) {
         	for(int j = 0; j < arrayLinhas.size(); j++) {
         		if(j == (arrayLinhas.size() - 1)){
@@ -43,11 +69,6 @@ public class Persistencia {
         }
         analysisMemoryTab.close();
 	}
-	
-	public void EscritaNoArquivoPorLinha(List<List<String>> arrayLinhas, FileWriter analysisMemoryTab, String delimitador) throws IOException {
-		new EscritaNoArquivoPorLinha(this, arrayLinhas, analysisMemoryTab, delimitador).escrever();
-	}
-		
 }
 
 class EscritaNoArquivoPorLinha{

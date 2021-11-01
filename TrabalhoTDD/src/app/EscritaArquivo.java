@@ -80,7 +80,7 @@ public class EscritaArquivo extends Persistencia{
 	}
 
 	public void escreverAnalysisTimeColuna(List<List<String>> arrayLinhas, int k) throws IOException {
-        escreverAnalysisColuna(k, new FileWriter("../TrabalhoTDD/" + this.caminhoSaida + "/analysisTimeTab.out"), arrayLinhas, this.delimitador);	
+		EscritaNoArquivoPorColuna(k, new FileWriter("../TrabalhoTDD/" + this.caminhoSaida + "/analysisTimeTab.out"), arrayLinhas, this.delimitador);	
 	}
 	
 	public void escreverAnalysisMemoryLinha(List<List<String>> arrayLinhas) throws IOException {
@@ -88,7 +88,7 @@ public class EscritaArquivo extends Persistencia{
 	}
 	
 	public void escreverAnalysisMemoryColuna(List<List<String>> arrayLinhas, int k) throws IOException {
-        escreverAnalysisColuna(k, new FileWriter("../TrabalhoTDD/" + this.caminhoSaida + "/analysisMemoryTab.out"), arrayLinhas, this.delimitador);
+		EscritaNoArquivoPorColuna(k, new FileWriter("../TrabalhoTDD/" + this.caminhoSaida + "/analysisMemoryTab.out"), arrayLinhas, this.delimitador);
 	}
 	
 }
