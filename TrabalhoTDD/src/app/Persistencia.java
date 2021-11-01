@@ -66,7 +66,6 @@ class EscritaNoArquivoPorLinha{
 			delimitador = delimitador2;		
 		}
 		
-		
 		public void escrever() throws IOException {
 			quantLinhas = arrayLinhas.size();
 			
@@ -75,15 +74,19 @@ class EscritaNoArquivoPorLinha{
 				posicaoUltimoElementoDaColuna = quantColunasNaLinha -1;
 				
 	        	for(int j = 0; j < quantColunasNaLinha; j++) {	
-	        		if(j == posicaoUltimoElementoDaColuna){
-	        			analysisMemoryTab.write(arrayLinhas.get(i).get(j));
-	        		}else {
-	        			analysisMemoryTab.write(arrayLinhas.get(i).get(j) + delimitador);
-	        		}
+	        		escreverNoArquivoSaida(i, j);
 	        	}
 	        	analysisMemoryTab.write("\n");
 	        }
 	        analysisMemoryTab.close();
+		}
+
+		private void escreverNoArquivoSaida(int i, int j) throws IOException {
+			if(j == posicaoUltimoElementoDaColuna){
+				analysisMemoryTab.write(arrayLinhas.get(i).get(j));
+			}else {
+				analysisMemoryTab.write(arrayLinhas.get(i).get(j) + delimitador);
+			}
 		}
 }
 
