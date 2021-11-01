@@ -22,7 +22,7 @@ public class LerArquivoAnalysisMemory extends Persistencia{
 		return nomeArquivo;
 	}
 
-	public String[] lerAnalysisTime() throws ArquivoNaoEncontradoException {
+	public String[] lerAnalysisMemory() throws ArquivoNaoEncontradoException {
 		return(lerAnalysis(this.nomeArquivo));
 	}
 
